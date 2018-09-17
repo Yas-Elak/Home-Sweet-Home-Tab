@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home Sweet Home</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="Styles/styles.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <!-- Librairies jqueryUI - TinyMCE -->
+  <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
+  <link rel="stylesheet" href="jquery-ui-1.12.1.custom/css-perso-jquery-ui.css">
+  <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+  <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+  <script src="tinymce/tinymce.min.js"></script>
+
+
+</head>
+<body>
+  <!-- menu bar start -->
+  <div id="my-menu-container">
+          <h1 id="weather-cast">Hello World</h1>
+  </div>
+  <!-- menu bar end -->
+
+      <div class="container" id="container-up">
+          <!-- todo and done list start -->
+          <div id="todo-list-container"></div>
+          <div id="done-list-container"></div>
+          <!-- todo and done list end -->
+          <div id="list-app-container"></div>
+      </div><!-- end of te container with to do list, done list and shortcut list -->
+      <div class="container" id="container-down">
+          <!-- notes start -->
+          <div id="notes-container">
+              <div id="notes">
+                  <button id="notes-size" class="get-big"></button>
+                  <ul>
+                      <li><a href="#note-tabs-1">Note 1</a></li>
+                      <li><a href="#note-tabs-2">Note 2</a></li>
+                      <li><a href="#note-tabs-3">Note 3</a></li>
+                      <li><a href="#note-tabs-4">Note 4</a></li>
+                      <li><a href="#note-tabs-5">Note 5</a></li>
+                      <li><a href="#note-tabs-6">Note 6</a></li>
+                  </ul>
+                  <div id="note-tabs-1">
+                      <textarea id="note-1">Write your first note here</textarea>
+                  </div>
+                  <div id="note-tabs-2">
+                      <textarea id="note-2"></textarea>
+                  </div>
+                  <div id="note-tabs-3">
+                      <textarea id="note-3"></textarea>
+                  </div>
+                  <div id="note-tabs-4">
+                      <textarea id="note-4"></textarea>
+                  </div>
+                  <div id="note-tabs-5">
+                      <textarea id="note-5"></textarea>
+                  </div>
+                  <div id="note-tabs-6">
+                      <textarea id="note-6"></textarea>
+                  </div>
+              </div>
+          </div>
+          <!-- notes end -->
+          <!-- games start -->
+          <div id="sudoku-container">
+              <div id="sudoku">
+                  <button id="start-sudoku">Play Sudoku</button>
+              </div>
+          </div>
+          <!-- games end -->
+          <!-- pet start -->
+          <div id="pet-container">
+              <div id="cat-box">
+                  <div id="pet">
+                      <div id="pet-body">
+                          <img src="images/cats/standing-cat-body.svg" class="svg cat-body" />
+                      </div>
+                      <div id="pet-head">
+                          <img src="images/cats/standing-cat-head.svg" class="svg cat-head" />
+
+                      </div>
+                      <div class="pet-eyes">
+                          <img id="pet-eyes-img" src="images/cats/standing-cat-eyes.svg" class="cat-eyes" />
+                      </div>
+                      <div class="pet-nose">
+                          <img src="images/cats/standing-cat-nose.svg" class=" cat-nose" />
+                      </div>
+                  </div>
+              </div>
+              <!-- pet end -->
+          </div> <!-- end of the container with notes, games and pet -->
+
+          <script src="scripts/background.js"></script>
+          <script src="scripts/initialisation.js"></script>
+          <script src="scripts/list-apps.js"></script>
+
+          <script src="scripts/note-tabs.js"></script>
+          <script src="scripts/shortcut-images.js"></script>
+          <script src="scripts/draggable.js"></script>
+          <script src="scripts/sauvegarde.js"></script>
+          <script src="scripts/tinymce-initialisation.js"></script>
+          <script src="scripts/game-btn.js"></script>
+          <script src="scripts/element-opacity.js"></script>
+          <script src="scripts/svg-colors.js"></script>
+
+          <!-- dialog add a new shortcup start -->
+          <div id="dialog" title="Add a new shortcut">
+              <div>
+                  <img src="images/png/addthis.png" alt="What it's look like" id="choose-app-img" />
+              </div>
+              <div class="ui-widget">
+                  <label for="tags">Tags: </label>
+                  <input id="tags">
+              </div>
+              <div>
+                  <p>Your image : </p><input type="text" name="uriApp" placeholder="URL of your image here, only png/jpg and max 250*250px">
+                  <p>Link ;</p><input type="text" name="urlApp" placeholder="URL of your shortcut">
+                  <p>Name : </p><input type="text" name="name-of-the-app" placeholder="Name of the shortcut, only letters and numbers">
+                  <button id="save-new-app">Save</button>
+              </div>
+          </div>
+          <!-- dialog add a new shortcut end -->
+          <!-- dialog change tab name start -->
+          <div id="dialog-rename-tabs" title="Change the tab name">
+              <div>
+                  <p>Tab name : </p><input type="text" name="new-tab-name" placeholder="Rename the tab : max 10 characters">
+                  <button id="save-tab-name">Save</button>
+              </div>
+          </div>
+          <!-- dialog change tab name end -->
+</body>
+</html>

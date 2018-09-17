@@ -1,0 +1,477 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,900);  /* <-- Just for the demo, Yes I like pretty fonts... */
+
+*{
+	box-sizing: border-box;
+	margin: 0pt;
+	padding: 0pt;
+}
+
+html{
+	margin: 0pt;
+}
+
+body {
+
+	background-size: cover;
+	font-size:20px;
+	font-family: 'Lato',verdana, sans-serif;
+	color: #fff;
+  }
+
+#my-menu-container{
+	text-align: center;
+	height: 10vh;
+}
+
+.container{
+   /* overflow: auto*/
+}
+
+
+  #onglet{
+	  display: block;
+	  width: 95%;
+	  margin: auto
+  }
+  #note-1, #note-2, #note-3, #note-4, #note-5, #note-6{
+	  display: block;
+	  height: 88vh;
+	  width: 95%;
+	  padding: 1%;
+	  margin: auto;
+	  background-color: rgba(0, 0, 0, 0.5);
+	  color: #fff;
+	  -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+  }
+/*
+  @media only screen and (max-width:1000px) {
+	/* For mobile phones: */
+/*	#todo-list-container, #done-list-container, #list-app-container, #notes-container, #charity-container, #pet-container {
+	  width:100%;
+	  height: auto;
+	}
+	#my-menu-container{
+		height: auto;
+	}
+  }
+
+*/
+
+.sortable li {
+	margin: 5px;
+	padding: 5px;
+	font-size: 1.2em;
+	width: 120px;
+}
+
+
+.sortable-apps {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.sortable-apps li {
+	margin: 3px 3px 3px 0;
+	padding: 1px;
+	float: left;
+	width: 13%;
+	height: 50%;
+	text-align: center;
+	cursor : pointer;
+	}
+
+
+.text-shortcut{
+	font-size: 15px;
+}
+
+#list-app-container img {
+	width: 90%;
+}
+#choose-app-img{
+	width: 50px;
+	height: 50px;
+
+}
+
+#ui-id-1 {
+	z-index: 1000;
+}
+/* App List, I put the css for the Jquery UI here*/
+#list-app-container {
+    float: left;
+    width: 50%;
+    height: 45vh;
+}
+
+
+#application-container {
+    position : relative;
+	width: 95%;
+	height: 95%;
+	margin: auto;
+	border-top: 5px solid #435757;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+	background-color: rgba(255, 255, 255, .2);
+	overflow-y: auto;
+	transition: 0.5s;
+}
+
+	/* END App List*/
+	/* To do List && Done List*/
+	#todo-list-container, #done-list-container {
+		width: 25%;
+		height: 45vh;
+		float: left;
+		font-family: 'Lato', sans-serif;
+		font-size: 0.65em;
+	}
+
+.save-todo-list-container, .save-done-list-container {
+    position: relative;
+    width: 95%;
+    height: 95%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, .2);
+    border-top: 5px solid #435757;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    overflow-y: auto;
+    transition: 0.5s;
+}
+
+.save-todo-list-container ul, .save-done-list-container ul {
+	list-style-type: none;
+	width: 95%;
+	min-height: 50%;
+}
+
+.save-done-list-container ul {
+	text-decoration: line-through;
+}
+
+.save-todo-list-container li, .save-done-list-container li {
+	position: relative;
+	border-top: 1px dashed #fff;
+	width: 100%;
+	height: 5%;
+	color: black;
+}
+
+.btn-delete {
+	background-color: Transparent;
+	background-repeat: no-repeat;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
+}
+
+.btn-delete img{
+	position: absolute;
+	right: 0;
+	top:30%;
+	width: 5%;
+}
+
+
+.adder {
+	position: relative;
+	width: 75%;
+	height: 10%;
+	margin: 2.2% auto;
+}
+
+.adder ::-webkit-input-placeholder {
+	color: #000;
+}
+
+
+.input-todo, .input-done {
+	width: 100%;
+	background: #fff;
+	color: black;
+	box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+	border: 0;
+	outline: 0;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 5%;
+	opacity: 0.6;
+	border-radius: 2px;
+}
+
+.add-todo, .add-done {
+	position: absolute;
+	right: 2%;
+	top: 0;
+	cursor: pointer;
+	transition: 200ms;
+	color: black;
+	padding-top: 1%;
+	will-change: transform;
+	font-size: 1.2em;
+
+}
+
+.add-todo:hover, .add-done:hover {
+	transform: rotate(360deg);
+}
+
+.save-todo-list-container::-webkit-scrollbar,
+.save-done-list-container::-webkit-scrollbar,
+#application-container::-webkit-scrollbar,
+#notes::-webkit-scrollbar {
+	width: 5px;
+}
+
+.save-todo-list-container::-webkit-scrollbar-track,
+.save-done-list-container::-webkit-scrollbar-track,
+#application-container::-webkit-scrollbar-track,
+#notes::-webkit-scrollbar-track {
+	background: #a0afaf;
+}
+
+..save-todo-list-container::-webkit-scrollbar-thumb,
+..save-done-list-container::-webkit-scrollbar-thumb,
+#application-container::-webkit-scrollbar-thumb,
+#notes::-webkit-scrollbar-thumb {
+	background: #435757;
+}
+
+/* END To do List && Done List*/
+
+
+/*notes list*/
+
+#notes-container {
+	width: 50%;
+	height: 43vh;
+	float: left;
+}
+
+#notes {
+	width: 97%;
+	height: 98%;
+	margin: auto;
+	background-color: rgba(255, 255, 255, .3);
+	border-top: 5px solid #435757;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+	overflow-y: auto;
+	transition: 0.5s;
+}
+
+
+	/*notes*/
+#notes > * {
+	padding: 0 !important;
+}
+.mce-container {
+	margin: auto !important;
+	background-color: rgba(255, 255, 255, .0) !important;
+}
+.mce-btn{
+	background: none !important;
+}
+
+body.mceContentBody {
+	background: #ffffff;
+	color: #fff;
+}
+#notes p {
+	color: white;
+}
+
+.mce-btn-group:not(:first-child){
+	border: none !important;
+}
+
+
+/*end notes*/
+
+
+/*Sudoku*/
+#sudoku-container {
+	width: 25%;
+	height: 43vh;
+	float: left;
+}
+/*before display*/
+
+#sudoku {
+    position: relative;
+	width: 95%;
+	height: 97.8%;
+	margin: auto;
+	background-color: rgba(255, 255, 255, .2);
+	border-top: 5px solid #435757;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.5s;
+    margin-left: 5.5%;
+}
+
+#start-sudoku {
+	width: 50%;
+	height: 15%;
+	background: transparent;
+	color: black;
+	transition: all 0.7s ease-out;
+	background: linear-gradient(270deg, rgba(67,87,87,0.8), rgba(60,127,127,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
+	background-position: 1% 50%;
+	background-size: 300% 300%;
+	text-decoration: none;
+	border: 2px solid #435757;
+	font-family: 'Lato',verdana, sans-serif;
+}
+#start-sudoku:hover {
+	color: #fff;
+	border: 1px solid rgba(223,190,106,0);
+	color: white;
+	background-position: 99% 50%;
+}
+
+/*after display*/
+.board input.c {
+	font-size: 15pt;
+	text-align: center;
+	color: #fff
+}
+
+.board textarea.hnt {
+	font-size: 8pt;
+	text-align: center;
+	overflow: hidden;
+	resize: none;
+}
+
+.board input.d {
+	BACKGROUND-COLOR: #dcdcdc;
+}
+
+.board textarea.d {
+	BACKGROUND-COLOR: #dcdcdc;
+}
+
+.c {
+	border: 1px black solid;
+	width: 1.2em;
+	height: 1.2em;
+}
+
+.hnt {
+	border: 1px black solid;
+	width: 3em;
+	height: 3em;
+}
+
+.vtc {
+	border-right: 0;
+}
+
+.hzl {
+	border-bottom: 0;
+}
+
+.sudoku-solver{
+	display: none;
+}
+/*end sudoku*/
+
+/*pet*/
+
+#pet-container {
+    float: left;
+    width: 25%;
+    height: 43vh;
+}
+
+svg{
+}
+#pet-head > svg path, #pet-body > svg path {
+    fill: #456abe !important;
+}
+
+pet-nose svg path {
+    fill: #000 !important;
+}
+#cat-box {
+    position: relative;
+    width: 90%;
+    height: 97.8%;
+    margin: auto;
+    background-color: #A5C6EF;
+    border-top: 5px solid #435757;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    margin-left: 5.5%;
+}
+
+#pet {
+    position: relative;
+
+}
+
+#pet-head{
+    position: absolute;
+    top: -10%;
+
+}
+
+#head-rotation:hover {
+    transform: rotate(12deg);
+    transition:  0.5s;
+}
+.pet-eyes{
+    position: absolute;
+    width: 50%;
+    top: 6%;
+    left: 5%;
+}
+
+
+
+.pet-nose {
+    position: absolute;
+    width: 80%;
+    top: 20%;
+    left: -6%;
+}
+
+
+#pet-container img{
+    position: absolute;
+
+    width: 75%;
+}
+
+/*buttons resize*/
+
+ #app-size, #notes-size, #todo-size {
+    position: absolute;
+    right: 1%;
+    top: 1%;
+    height: 10px;
+    width: 10px;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-image: url("../images/resize.png");
+    background-size: 100%;
+
+}
+
+#notes-size {
+    top: 3%;
+    right: 3%;
+
+}
