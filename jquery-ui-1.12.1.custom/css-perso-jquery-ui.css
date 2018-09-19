@@ -48,12 +48,3 @@
 #ui-id-1 {
 	z-index: 1000;
 }
-
-/*dialog*/
-.ui-dialog{
-	width: 50% !important;
-}
-
-.dialog-input{
-	width: 100%;
-}

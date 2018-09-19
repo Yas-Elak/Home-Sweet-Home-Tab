@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <script src="../jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+  <script src="../jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.min.css">
+
+  <title>add a new app</title>
+</head>
+<body>
+  <div id="container-general">
+    <div id="button-custom-defaut">
+      <button type="button" id="default-app" class="buttons">Default app</button>
+      <button type="button" id="custom-app">custom app</button>
+    </div>
+    <div id="container-default">
+      <div id="popular-apps">
+        <table id="app-table" style="width:100%">
+          <tr>
+            <th><div class="app">
+              <img src="../images/png/amazon.png"/>
+              <p class="app-title">Amazon</p>
+              <button type="button" class="add-button">Add</button>
+            </div></th>
+            <th><div class="app">
+              <img src="../images/png/deviantart.png"/>
+              <p class="app-title">DeviantArt</p>
+              <button type="button" class="add-button">Add</button>
+            </div></th>
+          </tr>
+          <tr>
+            <th><div class="app">
+              <img src="../images/png/facebook.png"/>
+              <p class="app-title">Facebook</p>
+              <button type="button" class="add-button">Add</button>
+            </div></th>
+            <th><div class="app">
+              <img src="../images/png/instagram.png"/>
+              <p class="app-title">Instagram</p>
+              <button type="button" class="add-button">Add</button>
+            </div></th>
+          </tr>
+          <tr>
+            <th><div class="app">
+              <img src="../images/png/linkedin.png"/>
+              <p class="app-title">Linkedin</p>
+              <button type="button" class="add-button">Add</button>
+            </div></th>
+            <th><div class="app">
+              <img src="../images/png/pinterest.png"/>
+              <p class="app-title">Pinterest</p>
+              <button type="button" class="add-button">Add</button>
+            </div></th>
+          </tr>
+          <tr>
+            <th><div class="app">
+              <img src="../images/png/tumblr.png"/>
+              <p class="app-title">Tumblr</p>
+              <button type="button" class="add-button">Add</button>
+            </div></th>
+            <th><div class="app">
+              <img src="../images/png/twitter.png"/>
+              <p class="app-title">Twitter</p>
+              <button type="button" class="add-button">Add</button>
+            </div></th>
+          </tr>
+          <tr>
+            <th><div class="app">
+              <img src="../images/png/wikipedia.png"/>
+              <p class="app-title">Wikipedia</p>
+              <button type="button" class="add-button">Add</button>
+            </div></th>
+            <th><div class="app">
+              <img src="../images/png/youtube.png"/>
+              <p class="app-title">Youtube</p>
+              <button type="button" class="add-button">Add</button>
+            </div></th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="container-custom">
+      <div id="custom-apps">
+        <img id="falseinput" src="../images/png/addthis.png"/>
+        <p>Shortcut Link : </p><input type="text" id="shortcut-link"  placeholder="url ex: www.youtube.com">
+        <p>Shortcut Name : </p><input type="text" id="shortcut-name" placeholder="name ex :youtube">
+        <p>Choose an image png/jpg on the web...</p>
+        <p>image Link : </p><input type="text" id="image-url"  id="url-input" placeholder="image ex: www.website/image.jpg"><br>
+        <p>...or on your computer</p>
+        <input id="file-input" type="file" accept="image/gif, image/jpeg, image/png"/><br>
+        <button type="button" id="submit-btn">Submit</button>
+        <p id="value-to-get"></p>
+      </div>
+    </div>
+
+  </div>
+  <script src="autocomplete.js"></script>
+
+</body>
+</html>

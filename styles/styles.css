@@ -67,7 +67,7 @@ position: relative;
 	height: 5vh;
 	top: 13%;
 	right: 1%;
-	z-index: 100;
+	z-index: 1;
 }
 .container{
    /* overflow: auto*/
@@ -440,7 +440,7 @@ body.mceContentBody {
 svg{
 }
 #pet-head > svg path, #pet-body > svg path {
-    fill: #456abe !important;
+    fill: #FEAC74 !important;
 }
 
 pet-nose svg path {
@@ -521,4 +521,18 @@ pet-nose svg path {
     top: 3%;
     right: 3%;
 
+}
+
+
+/*iframe*/
+#app-iframe{
+position: fixed;
+right: -40%;
+top: 0;
+width: 40%;
+height:100%;
+display: none;
+border-left: 5px #435757 solid;
+border-top: 0;
+border-bottom: 0;
 }

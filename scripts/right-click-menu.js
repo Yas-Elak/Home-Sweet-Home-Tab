@@ -3,8 +3,12 @@
     $.contextMenu({
         selector: '.context-menu-one',
         callback: function(key, options) {
-            var m = "clicked: " + key;
-            window.console && console.log(m) || alert(m);
+            if(key == "edit"){
+              console.log('e');
+              //un dialog ou un iframe pour éditer le logo, le lien, et le titre
+            }else{
+                $(this).closest('li').remove();
+              }
         },
         items: {
             "edit": {name: "Edit", icon: "fa-edit"},
@@ -13,6 +17,6 @@
     });
 
     $('.context-menu-one').on('click', function(e){
-        console.log('clicked', this);
+        console.log('clicked', this)
     })
 });
