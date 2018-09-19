@@ -11,18 +11,64 @@ html{
 }
 
 body {
-
+position: relative;
 	background-size: cover;
 	font-size:20px;
 	font-family: 'Lato',verdana, sans-serif;
 	color: #fff;
   }
 
+/*dialog*/
+#dialog-container{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+/*end dialog*/
+
+#dialog{
+
+
+}
+
 #my-menu-container{
 	text-align: center;
 	height: 10vh;
+
 }
 
+#my-menu{
+	position : relative;
+	height: 75%;
+	background-color: #595959;
+	border-bottom: 5px solid #435757;
+
+}
+/* wheater*/
+.weather {
+	position: absolute;
+	top:13%;
+	left: 1%;
+	display: flex;
+  align-items:center;
+}
+#weather-icon{
+	height: 5vh;
+}
+
+.weather *{
+	padding-left: 5px;
+}
+
+#background-btn{
+	position: absolute;
+	height: 5vh;
+	top: 13%;
+	right: 1%;
+	z-index: 100;
+}
 .container{
    /* overflow: auto*/
 }
@@ -414,16 +460,17 @@ pet-nose svg path {
     transition: 0.5s;
     margin-left: 5.5%;
 }
-
+#pet-name{
+	position: absolute;
+	bottom: 0;
+}
 #pet {
     position: relative;
-
 }
 
 #pet-head{
     position: absolute;
     top: -10%;
-
 }
 
 #head-rotation:hover {

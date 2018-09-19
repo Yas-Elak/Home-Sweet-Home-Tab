@@ -1,50 +1,59 @@
-.ui-widget, .ui-widget-content {
+.container .ui-widget, .container .ui-widget-content {
 	border: none !important;
 	background: none;
 }
 
-.ui-tabs, .ui-tabs-nav{
+.container  .ui-tabs, .container  .ui-tabs-nav{
 	padding: 0 !important;
-}
 
-.ui-tabs .ui-tabs-nav li{
+}
+.container  .ui-tabs .ui-tabs-nav li{
 	margin : 0 !important;
 	border-radius: 0 !important;
 }
 
-.ui-widget-header {
-	background: none !important;
+.container  .ui-widget-header {
 	border-bottom: 5px solid rgba(255, 255, 255, .7);
+	background: none !important;
 	border-top : none !important;
 	border-right: none !important;
 	border-left: none !important;
 }
 
-.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+.container  .ui-state-active,.container  .ui-widget-content .ui-state-active, .container .ui-widget-header .ui-state-active, .container a.ui-button:active,.container  .ui-button:active, .ui-button.ui-state-active:hover {
 	border: none !important;
 	background-color: rgba(255, 255, 255, .7) !important;
 	color: black !important;
 }
 
-.ui-state-default,.ui-state-default {
+.container  .ui-state-default,.container .ui-state-default {
 	border: none !important;
 	background: none !important;
 }
-.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited{
+.container .ui-state-active a,.container  .ui-state-active a:link,.container  .ui-state-active a:visited{
 	color: black !important;
 }
-.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+.container .ui-state-active, .container .ui-widget-content .ui-state-active,.container  .ui-widget-header .ui-state-active,.container  a.ui-button:active,.container  .ui-button:active, .ui-button.ui-state-active:hover{
 	border: none !important;
 }
 
-ui-widget *{
+.container ui-widget *{
 	outline: none !important;
 }
 
-.ui-tabs-anchor:active, .ui-tabs-anchor:focus {
+.container .ui-tabs-anchor:active, .container  .ui-tabs-anchor:focus {
 	outline: none !important;
 }
 
 #ui-id-1 {
 	z-index: 1000;
+}
+
+/*dialog*/
+.ui-dialog{
+	width: 50% !important;
+}
+
+.dialog-input{
+	width: 100%;
 }

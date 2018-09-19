@@ -49,22 +49,22 @@ $(function () {
                   </ul>
                   <div id="app-tabs-1">
                     <ul class="sortable-apps">
-                      <li class="ui-state-default"><img class="clickable" src="/images/png/addthis.png" /><p class="text-shortcut">add</p></li>
+                      <li class="ui-state-default"><img class="clickable context-menu-one" src="/images/png/addthis.png" /><p class="text-shortcut">add</p></li>
                     </ul>
                   </div>
                   <div id="app-tabs-2">
                     <ul class="sortable-apps">
-                      <li class="ui-state-default"><img class="clickable" src="/images/png/addthis.png" /><p class="text-shortcut">add</p></li>
+                      <li class="ui-state-default"><img class="clickable context-menu-one" src="/images/png/addthis.png" /><p class="text-shortcut">add</p></li>
                       </ul>
                   </div>
                   <div id="app-tabs-3">
                     <ul class="sortable-apps">
-                      <li class="ui-state-default"><img class="clickable" src="/images/png/addthis.png" /><p class="text-shortcut">add</p></li>
+                      <li class="ui-state-default"><img class="clickable context-menu-one" src="/images/png/addthis.png" /><p class="text-shortcut">add</p></li>
                     </ul>
                   </div>
                   <div id="app-tabs-4">
                     <ul class="sortable-apps">
-                      <li class="ui-state-default"><img class="clickable" src="/images/png/addthis.png" /><p class="text-shortcut">add</p></li>
+                      <li class="ui-state-default"><img class="clickable context-menu-one" src="/images/png/addthis.png" /><p class="text-shortcut">add</p></li>
                     </ul>
                   </div>
                   <button id="app-size" class="get-big"></button>

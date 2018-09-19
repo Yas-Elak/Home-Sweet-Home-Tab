@@ -64,6 +64,14 @@ $(window).on("load", function (e) {
             });
     });
 
+
+
+$('#background-btn').mouseover( function (event) {
+  $(".container").stop(true,true).delay(2000).fadeOut('slow');
+}).mouseout( function (event) {
+   $(".container").stop(true,true).fadeIn('slow');
+ });
+
     //resize everything
     let isItBig = false;
     resizeEverything('#app-size', '#container-down', '#todo-list-container', '#done-list-container', '#list-app-container', '50%', '45vh');

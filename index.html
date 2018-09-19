@@ -9,19 +9,38 @@
   <link rel="stylesheet" href="Styles/styles.css">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <!-- Librairies jqueryUI - TinyMCE -->
+  <!-- Librairies jqueryUI - TinyMCE - contextmenu - font awesome-->
   <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
   <link rel="stylesheet" href="jquery-ui-1.12.1.custom/css-perso-jquery-ui.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="context-menu/contextMenu.min.css">
+
   <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
   <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
   <script src="tinymce/tinymce.min.js"></script>
+  <script src="context-menu/contextMenu.min.js"></script>
+  <script src="scripts/hover-intent/jquery.hoverIntent.min.js"></script>
+
+
+
 
 
 </head>
 <body>
+  <img src="images/mountains.svg" id="background-btn">
+
   <!-- menu bar start -->
-  <div id="my-menu-container">
-          <h1 id="weather-cast">Hello World</h1>
+  <div id="my-menu-container" class="container">
+    <div id="my-menu">
+      <div class="weather text-center" id="c">
+        <span id="city"></span>
+        <span id="temp"></span>
+        <span id="iconpic">
+          <img src="" id='weather-icon'>
+        </span>
+      </div><!--weather-->
+    </div>
+
   </div>
   <!-- menu bar end -->
 
@@ -30,11 +49,11 @@
           <div id="todo-list-container"></div>
           <div id="done-list-container"></div>
           <!-- todo and done list end -->
-          <div id="list-app-container"></div>
+          <div id="list-app-container" class="ui-container"></div>
       </div><!-- end of te container with to do list, done list and shortcut list -->
       <div class="container" id="container-down">
           <!-- notes start -->
-          <div id="notes-container">
+          <div id="notes-container" class="ui-container">
               <div id="notes">
                   <button id="notes-size" class="get-big"></button>
                   <ul>
@@ -71,6 +90,7 @@
               <div id="sudoku">
                   <button id="start-sudoku">Play Sudoku</button>
               </div>
+
           </div>
           <!-- games end -->
           <!-- pet start -->
@@ -91,10 +111,12 @@
                           <img src="images/cats/standing-cat-nose.svg" class=" cat-nose" />
                       </div>
                   </div>
+                  <p id="pet-name">name</p>
               </div>
               <!-- pet end -->
-          </div> <!-- end of the container with notes, games and pet -->
+          </div>
 
+      </div> <!-- end of the container with notes, games and pet -->
           <script src="scripts/background.js"></script>
           <script src="scripts/initialisation.js"></script>
           <script src="scripts/list-apps.js"></script>
@@ -107,20 +129,26 @@
           <script src="scripts/game-btn.js"></script>
           <script src="scripts/element-opacity.js"></script>
           <script src="scripts/svg-colors.js"></script>
+          <script src="scripts/weather.js"></script>
+          <script src="scripts/right-click-menu.js"></script>
+          <script src="scripts/pets.js"></script>
 
           <!-- dialog add a new shortcup start -->
+          <div id="dialog-container">
           <div id="dialog" title="Add a new shortcut">
               <div>
                   <img src="images/png/addthis.png" alt="What it's look like" id="choose-app-img" />
               </div>
               <div class="ui-widget">
-                  <label for="tags">Tags: </label>
-                  <input id="tags">
+                  <label for="tags">choose a shortcut already saved in the extention: </label>
+                  <input  class="dialog-input" id="tags">
+                  <p>And give it a name : </p><input class="dialog-input" type="text" name="name-of-the-app" placeholder="Name of the shortcut">
               </div>
+              <p>------------------------------------------------------</p>
               <div>
-                  <p>Your image : </p><input type="text" name="uriApp" placeholder="URL of your image here, only png/jpg and max 250*250px">
-                  <p>Link ;</p><input type="text" name="urlApp" placeholder="URL of your shortcut">
-                  <p>Name : </p><input type="text" name="name-of-the-app" placeholder="Name of the shortcut, only letters and numbers">
+                  <p>Or put your image here : (not both) </p><input class="dialog-input" type="text" name="uriApp" placeholder="URL of your image here">
+                  <p>Link :</p><input class="dialog-input" type="text" name="urlApp" placeholder="URL of your shortcut">
+                  <p>Name : </p><input class="dialog-input" type="text" name="name-of-the-app" placeholder="Name of the shortcut">
                   <button id="save-new-app">Save</button>
               </div>
           </div>
@@ -132,6 +160,12 @@
                   <button id="save-tab-name">Save</button>
               </div>
           </div>
+          </div>
           <!-- dialog change tab name end -->
+
+
+
+
+
 </body>
 </html>

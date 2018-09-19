@@ -8,8 +8,7 @@ $(function(){
         jQuery.get(imgURL, function(data) {
             // Get the SVG tag, ignore the rest
             var $svg = jQuery(data).find('svg');
-            console.log('svg:');
-            console.log($svg);
+
 
             // Add replaced image's ID to the new SVG
             if(typeof imgID !== 'undefined') {
@@ -37,9 +36,9 @@ $(function(){
 
     $("#pet").hover(function () {
         $("#pet-eyes-img").attr("src", "images/cats/standing-cat-eyes-closed.svg");
-        console.log('ezezeze');
     }, function () {
         $("#pet-eyes-img").attr("src", "images/cats/standing-cat-eyes.svg");
-        console.log("dsff");
     });
+    //cat animation loop
+
 });

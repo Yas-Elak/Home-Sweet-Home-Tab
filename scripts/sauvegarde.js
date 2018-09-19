@@ -2,7 +2,6 @@
 $(window).on("load", function (e) {
     chrome.storage.local.set({ "applistcontainer": $('#list-app-container').prop('innerHTML') });
     chrome.storage.local.get("applistcontainer", function (result) {
-        console.log(result.applistcontainer);
     });
 
     MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
@@ -18,7 +17,6 @@ $(window).on("load", function (e) {
     });
 
     function copy() {
-        console.log('a');
     }
 //-->
     //test work with enter in input
@@ -41,7 +39,6 @@ $(window).on("load", function (e) {
 
 
     function mutationHandler(mutationRecords) {
-        console.log('save');
     }
     //-test
 });
