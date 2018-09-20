@@ -1,6 +1,7 @@
 $(function() {
 
   let returnUri;
+  let urlImgValue
   $("#container-custom").hide();
 
   $("#default-app").click(function () {
@@ -14,15 +15,15 @@ $(function() {
   $("#submit-btn").click(function () {
     let linkValue = $("#shortcut-link").val();
     let nameValue = $("#shortcut-name").val();
-    let urlImgValue = $("#image-url").val();
+    urlImgValue = $("#image-url").val();
 
     if(linkValue != "" && nameValue != ""){
       console.log(nameValue);
       if(urlImgValue != ""){
-        if(urlImgValue.substr(id.length - 1) != "g"){
+        if(urlImgValue.substr(urlImgValue.length - 1) != "g"){
           alert("the image must be a png or a jpg");
         } else{
-          console.log("je dois créer l'uri, l'affiche et le sauvegarde");
+          $("#value-to-get").html('<li class="ui-state-default ui-sortable-handle context-menu-one btn btn-neutral"><a href="https://' + linkValue + '"><img src="' + urlImgValue + '" class="application" /><a/><p class="text-shortcut">' + nameValue + '</p></li>');
         }
       } else if ($("#file-input").val() != ""){
         console.log("je suis au bon endroit");
@@ -36,13 +37,11 @@ $(function() {
     }
   });
 
- $("#url-input").change(function(){
-   if(urlImgValue.substr(id.length - 1) != "g"){
-     alert("the image must be a png or a jpg");
-   } else{
-     $('#falseinput').attr("src",  $("url-input").val());
-   }
+ $("#image-url").change(function(){
+   $('#falseinput').attr("src",  $("#image-url").val());
  });
+
+
 
   $("#file-input").change(function (input) {
         $("#image-url").val("");
