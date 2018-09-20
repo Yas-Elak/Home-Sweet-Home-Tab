@@ -15,7 +15,6 @@ $(window).on("load", function (e) {
             });
         }
     });
-    console.log('2');
     chrome.storage.local.get("note1", function (result) {
         tinyMCE.editors[0].setContent(result.note1);
     });
