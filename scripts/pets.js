@@ -44,6 +44,8 @@ $("#cat-box").css("background-color", (colorsArray[colorNumber+1]));
 //animation
  function animation1(top){
         $(".pet-head").animate({rotate: '15deg'}, 1000).delay(1000);
+        $(".pet-eyes-img").attr("src", "images/cats/standing-cat-eyes-closed.svg").delay(100);
+        $(".pet-eyes-img").attr("src", "images/cats/standing-cat-eyes.svg");
         $(".pet-head").animate({'top':''+negation+(top-5)+'%'},1000).delay(2000);
         $(".pet-head").animate({rotate: '0deg'}, 1000);
         $(".pet-head").animate({'top':''+negation+top+'%'},1000).delay(6000);
@@ -81,4 +83,10 @@ setInterval(function(){
   animation5(topPosition);
 },1000);
 
+
+$("#pet,#pet-sitting,#pet-resting").hover(function () {
+    $(".pet-eyes-img").attr("src", "images/cats/standing-cat-eyes-closed.svg");
+}, function () {
+    $(".pet-eyes-img").attr("src", "images/cats/standing-cat-eyes.svg");
+});
 });
