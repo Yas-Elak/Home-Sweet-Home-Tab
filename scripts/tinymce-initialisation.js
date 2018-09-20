@@ -15,10 +15,7 @@ $(window).on("load", function (e) {
             });
         }
     });
-<<<<<<< HEAD
-=======
-    console.log('2');
->>>>>>> a8140ac6d4681f8301e5f6e5db5a5ea8e430d68e
+
     chrome.storage.local.get("note1", function (result) {
         tinyMCE.editors[0].setContent(result.note1);
     });
