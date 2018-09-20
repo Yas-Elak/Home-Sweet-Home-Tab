@@ -3,7 +3,7 @@ $(function () {
     let firstTime;
 
     //TODO here I clear the storge every time for testing purpose
-    chrome.storage.local.clear();
+    //chrome.storage.local.clear();
 
     /* i Initailize the todo list, the done list and the app list the first time
     the app run, then I save them in the storage
@@ -49,22 +49,22 @@ $(function () {
                   </ul>
                   <div id="app-tabs-1">
                     <ul class="sortable-apps">
-                      <li class="ui-state-default"><img class="clickable context-menu-one" src="/images/png/addthis.png" /><p class="text-shortcut">add</p></li>
+                      <li class="ui-state-default"><img class="clickable" src="/images/png/addthis.png" /><p class="text-shortcut">add</p></li>
                     </ul>
                   </div>
                   <div id="app-tabs-2">
                     <ul class="sortable-apps">
-                      <li class="ui-state-default"><img class="clickable context-menu-one" src="/images/png/addthis.png" /><p class="text-shortcut">add</p></li>
+                      <li class="ui-state-default"><img class="clickable" src="/images/png/addthis.png" /><p class="text-shortcut">add</p></li>
                       </ul>
                   </div>
                   <div id="app-tabs-3">
                     <ul class="sortable-apps">
-                      <li class="ui-state-default"><img class="clickable context-menu-one" src="/images/png/addthis.png" /><p class="text-shortcut">add</p></li>
+                      <li class="ui-state-default"><img class="clickable" src="/images/png/addthis.png" /><p class="text-shortcut">add</p></li>
                     </ul>
                   </div>
                   <div id="app-tabs-4">
                     <ul class="sortable-apps">
-                      <li class="ui-state-default"><img class="clickable context-menu-one" src="/images/png/addthis.png" /><p class="text-shortcut">add</p></li>
+                      <li class="ui-state-default"><img class="clickable" src="/images/png/addthis.png" /><p class="text-shortcut">add</p></li>
                     </ul>
                   </div>
                   <button id="app-size" class="get-big"></button>
@@ -73,35 +73,27 @@ $(function () {
             $("#list-app-container").html(appListContainer);
             firstTime = false;
             chrome.storage.local.set({ "firstTime": firstTime });
+            chrome.storage.local.set({ "toDoListContainer": $('#todo-list-container').prop('innerHTML') });
+            chrome.storage.local.set({ "donelistcontainer": $('#done-list-container').prop('innerHTML') });
+            chrome.storage.local.set({ "applistcontainer": $('#list-app-container').prop('innerHTML') });
+            chrome.storage.local.set({ "note1": "" });
+            chrome.storage.local.set({ "note2": "" });
+            chrome.storage.local.set({ "note3": "" });
+            chrome.storage.local.set({ "note4": "" });
+            chrome.storage.local.set({ "note5": "" });
+            chrome.storage.local.set({ "note6": "" });
             //then the firsttime is false and this part never run again
         }
         else {
-            chrome.storage.local.get("note1", function (result) {
-                tinyMCE.editors[0].setContent(result.note1);
-            });
-            chrome.storage.local.get("note-2", function (result) {
-                tinyMCE.editors[1].setContent(result.note2);
-            });
-            chrome.storage.local.get("note3", function (result) {
-                tinyMCE.editors[2].setContent(result.note3);
-            });
-            chrome.storage.local.get("note4", function (result) {
-                tinyMCE.editors[3].setContent(result.note4);
-            });
-            chrome.storage.local.get("note5", function (result) {
-                tinyMCE.editors[4].setContent(result.note5);
-            });
-            chrome.storage.local.get("note6", function (result) {
-                tinyMCE.editors[5].setContent(result.note6);
-            });
+
             chrome.storage.local.get("donelistcontainer", function (result) {
-                $("#donelistcontainer").html(result.donelistcontainer);
+                $("#done-list-container").html(result.donelistcontainer);
             });
             chrome.storage.local.get("toDoListContainer", function (result) {
-                $("#todolistcontainer").html(result.toDoListContainer);
+                $("#todo-list-container").html(result.toDoListContainer);
             });
             chrome.storage.local.get("applistcontainer", function (result) {
-                $("#listappcontainer").html(result.applistcontainer);
+                $("#list-app-container").html(result.applistcontainer);
             });
         }
     });
