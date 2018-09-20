@@ -11,7 +11,7 @@
               }
         },
         items: {
-            "edit": {name: "Edit", icon: "fa-edit"},
+          //no edit yet  "edit": {name: "Edit", icon: "fa-edit"},
             "delete": {name: "Delete", icon: "fa-trash"},
         }
     });
