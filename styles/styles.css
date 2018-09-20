@@ -42,7 +42,7 @@ position: relative;
 #my-menu{
 	position : relative;
 	height: 75%;
-	background-color: #595959;
+	background-color: rgba(0, 0, 0, 0.5);
 	border-bottom: 5px solid #435757;
 
 }
