@@ -437,11 +437,6 @@ body.mceContentBody {
     height: 43vh;
 }
 
-svg{
-}
-svg path {
-    /*fill: #ffffff !important;*/
-}
 
 pet-nose svg path {
     fill: #000 !important;
@@ -460,36 +455,40 @@ pet-nose svg path {
     transition: 0.5s;
     margin-left: 5.5%;
 }
-#pet-name{
-	position: absolute;
-	bottom: 0;
-}
-#pet {
+
+
+
+#pet, #pet-sitting {
     position: relative;
 }
 
-#pet-head{
+.pet-head{
     position: absolute;
     top: -10%;
+		left: -1%;
 }
 
-#pet-eyes-img{
+.pet-eyes-img{
     position: absolute;
     width: 80%;
     top: 32%;
     left: 10%;
 }
 
-#pet-nose-img {
+.pet-nose-img {
     position: absolute;
     width: 110%;
     top: 60%;
     left: -6%;
-
-
 }
 
-#pet:hover {
+.pet-shadow{
+	position: absolute;
+	bottom:3%;
+	left: 12%
+}
+
+#pet:hover, #pet-sitting:hover, #pet-resting:hover {
     /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.5s;
     /* When the animation is finished, start again */
@@ -509,6 +508,12 @@ pet-nose svg path {
     90% { transform: translate(0px, 0px) rotate(0deg); }
     100% { transform: translate(1px, 1px) rotate(-1deg); }
 }
+
+#pet-name{
+	position: absolute;
+	bottom: 0;
+}
+
 /*buttons resize*/
 
  #app-size, #notes-size, #todo-size {
