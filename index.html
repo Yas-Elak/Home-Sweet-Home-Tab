@@ -19,7 +19,7 @@
   <script src="tinymce/tinymce.min.js"></script>
   <script src="context-menu/contextMenu.min.js"></script>
   <script src="plugin/easeout-1.3.js"></script>
-
+  <script src="plugin/jquery-animate-css-rotate-scale.js"></script>
 </head>
 <body>
   <img src="images/mountains.svg" id="background-btn">
@@ -92,15 +92,10 @@
                         <img src="images/cats/standing-cat-body.svg" class="svg cat-body" />
                     </div>
                     <div id="pet-head">
-                        <img src="images/cats/standing-cat-head.svg" class="svg cat-head" />
-
-                    </div>
-                    <div class="pet-eyes">
-                        <img id="pet-eyes-img" src="images/cats/standing-cat-eyes.svg" class="cat-eyes" />
-                    </div>
-                    <div class="pet-nose">
-                        <img src="images/cats/standing-cat-nose.svg" class=" cat-nose" />
-                    </div>
+                        <img id="pet-head-img" src="images/cats/standing-cat-head.svg" class="svg" />
+                        <img id="pet-eyes-img" src="images/cats/standing-cat-eyes.svg" />
+                        <img id="pet-nose-img" src="images/cats/standing-cat-nose.svg" class=" cat-nose" />
+                  </div>
                 </div>
                 <p id="pet-name">name</p>
             </div>
@@ -123,7 +118,7 @@
         <script src="scripts/right-click-menu.js"></script>
         <script src="scripts/pets.js"></script>
         <script src="scripts/iframe-handler.js"></script>
-        
+
         <iframe id="app-iframe" src="add-app-iframe/frame.html"></iframe>
         <!-- dialog add a new shortcup start -->
         <div id="dialog-container">

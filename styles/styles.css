@@ -439,8 +439,8 @@ body.mceContentBody {
 
 svg{
 }
-#pet-head > svg path, #pet-body > svg path {
-    fill: #FEAC74 !important;
+svg path {
+    /*fill: #ffffff !important;*/
 }
 
 pet-nose svg path {
@@ -473,33 +473,42 @@ pet-nose svg path {
     top: -10%;
 }
 
-#head-rotation:hover {
-    transform: rotate(12deg);
-    transition:  0.5s;
-}
-.pet-eyes{
-    position: absolute;
-    width: 50%;
-    top: 6%;
-    left: 5%;
-}
-
-
-
-.pet-nose {
+#pet-eyes-img{
     position: absolute;
     width: 80%;
-    top: 20%;
-    left: -6%;
+    top: 32%;
+    left: 10%;
 }
 
-
-#pet-container img{
+#pet-nose-img {
     position: absolute;
+    width: 110%;
+    top: 60%;
+    left: -6%;
 
-    width: 75%;
+
 }
 
+#pet:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(0px, 0px) rotate(-1deg); }
+    20% { transform: translate(-1px, 0px) rotate(0deg); }
+    30% { transform: translate(0px, 1px) rotate(0deg); }
+    40% { transform: translate(1px, 0px) rotate(1deg); }
+    50% { transform: translate(0px, 1px) rotate(0deg); }
+    60% { transform: translate(-1px, 1px) rotate(0deg); }
+    70% { transform: translate(0px, 0px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(0deg); }
+    90% { transform: translate(0px, 0px) rotate(0deg); }
+    100% { transform: translate(1px, 1px) rotate(-1deg); }
+}
 /*buttons resize*/
 
  #app-size, #notes-size, #todo-size {
