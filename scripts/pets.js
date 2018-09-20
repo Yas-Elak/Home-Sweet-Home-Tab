@@ -5,7 +5,7 @@ let titleArray = ["Miss","Mr","Mrs","Ms","Brother","Captain","Doctor","Father","
 let nameArray = ["Alfie","Angel","Argus","Arwen","Ashton","Baby","Bailey","Bassil","Beage","Bender","Benny","Big","Red","Big","Sammy","Binka","Binx","Blackie","Bobo","Boogie","Boris","Bowser","Brandy","Buddy","Butterscotch","Cally","Caramel","Casey","Catherine","Cece","Celine","Cherio","Chloe","Churchill","Cinders","Clarence","Claude","Cleo","Coffee","Cookie","Cooper","Cosmo","Couch","Potato","Daisy","Dakota","Dark","Moon","David","Denver","Diesel","Dilon","Disney","Dissy","Divine","Dude","","Ebony","Enzo","Faggie","Fagison","Felix","Ferris","Fifi","Flowerbee","Fluffernet","Fluffy","Fosters","Freckles","Frollo","Freckuls","Fudge","Fudge","Fuffie","Gabrielle","Gadget","Gary","Ginger","Gipsy","Gizmo","Gore","Grace","Griswald","Grizz","Grizzabella","Harley","Hazel","Henry","Hex","Hoppy","Indy","Izzy","Jasmine","Jay","Jinx","Jon","Jymes","Dean","Katie","Kelee","Kenny","Kirby","Kitty","Kliff","Kool","Kat","Lady","Larry","Lera","Lexie","Lincoln","","Little","Lucy","Mac","Mackie","Marbles","Mario","Marley","Marmelade","Martin","Max","Maxine","Merlin","Micky","Midnight","Mippen","Misty","Missy","Mittens","Mitzy","Molly","Moon","Pie","Moriarty","Moritz","Moses","Mozart","Ms","Kitty","Myah","Nala","Natasha","Nemo","Niglet","Nikita","Noodles","Noodlehead","Oliver","Oreo","Orwell","Oscar","Panda","Patsy","Paws","Peanut","Peter","Phoebe","Pinkle","Plinky","Poocat","Pooder","Pookie","Prince","Princess","Pumpkin","","Punkin","Purr","Rajha","Ralph","Rascal","Romeo","Roxie","Rylie","Sadie","Salem","Sammy","Sasha","Scooter","Scout","Secret","Shadow","Shane","Shelby","Simba","Simon","Simpson","Slippers","Smudge","Sophie","Soushi","Sparkle","Sputnick","Stanley","Starlett","Sticky","Stimpy","Stray","Sugar","Sunny","Tater","Tigger","Tinkerbell","Tina","Tiny","Tobi","Tori","Tricia","Tucker","Tuna","Twiggy","Walter","Whiskers","Willow","Wyatt","Xman","Zakkie","Zebra"]
 
 let colorsArray =
-["f1e3cc","67B5FF","2F190A","67F5FF","ee8033","67F3FF","036818","FF677B","f6ae99","67FFD5","FCE6DF","67FFD9","F7EFED","67FFCD","FF8567","67FFCD","ACA1A1","67FF92","69656f","FFFA67","293249","FFDD0D","92b4f2","FFAE00","fffafc","FF1975","ffffff","000000"]
+["#D7EDAF","#5E5E5E","#BFD3D6","#FCB47E","#F2CC7B","#FCDAC9","#D7EDAF","#FCDAC9","#FC7E7E","#5E5E5E","#A2D8C0","#FCB47E","#E5A5C2","#B3B3B3","#F2CC7B","#B3B3B3","#A5C6EF","#B3B3B3","#A2D8C0","#5E5E5E"]
 
 //name of the pet
 let titleNumber = Math.floor((Math.random() * titleArray.length ) + 1);
@@ -14,8 +14,8 @@ $( "#pet-name" ).html(titleArray[titleNumber]+" "+nameArray[nameNumber]);
 
 //color of the Pet
 let colorNumber = Math.floor((Math.random() * colorsArray.length));
-$("svg,path").css({ fill: ("#"+colorsArray[colorNumber]) });
-$("#cat-box").css("background-color", ("#"+colorsArray[colorNumber+1]));
+$("svg,path").css({ fill: (colorsArray[colorNumber]) });
+$("#cat-box").css("background-color", (colorsArray[colorNumber+1]));
 
 //animation
  function animation1(){
