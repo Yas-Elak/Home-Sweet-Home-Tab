@@ -34,11 +34,6 @@ $(function(){
 
     });
 
-    $("#pet").hover(function () {
-        $("#pet-eyes-img").attr("src", "images/cats/standing-cat-eyes-closed.svg");
-    }, function () {
-        $("#pet-eyes-img").attr("src", "images/cats/standing-cat-eyes.svg");
-    });
-    //cat animation loop
+
 
 });
