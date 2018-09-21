@@ -1,9 +1,8 @@
 $(window).on("load", function (e) {
 
-let parentIdOfClickedImage;
-let nameValue;
-let animationFinished = false;
 
+//map of the shortcut available inside the extention with the name and link
+//to keep updated with the new elements
 mapOfApps = new Map();
 mapOfApps.set("addthis", ["images///png/addthis.png", "#"]);
 mapOfApps.set("Amazon", ["images///png/amazon.png", "www.amazon.com"]);
@@ -56,6 +55,13 @@ mapOfApps.set("Yandex", ["images///png/yandex.png", "www.yandex.com"]);
 mapOfApps.set("Youtube", ["images///png/youtube.png", "www.youtube.com"]);
 mapOfApps.set("Zerply", ["images///png/zerply.png", "www.zerply.com"]);
 
+let parentIdOfClickedImage;
+let nameValue;
+let animationFinished = false;
+
+//when i click on my add button of the app, I get the tab where it is
+//then the Iframe comes with an animation but I want to knwo when the animation
+//is finished to know when i can close the iframe. That is why I have a promise
 $(".clickable").on("click", function () {
   parentIdOfClickedImage = this.parentElement.parentElement
   $("#app-iframe").show();
@@ -66,29 +72,34 @@ $(".clickable").on("click", function () {
      animationFinished = true;
    });
 });
+  //to hide the iframe I click on the container of my principal page
+  $(".container").on("click", function(){
+    if(animationFinished == true){
+      $("#app-iframe").animate({"right": "-40%"},
+      { duration: 1250, easing: 'easeOutBounce' })
+      .promise().done(function () {
+          $("#app-iframe").hide();
+      });
+        animationFinished = false;
+    }
+  });
 
-$('#app-iframe').contents().find('.add-button').click(function(){
-  nameValue = $(this).closest('th').find("p").text();
-  console.log(nameValue)
- $(parentIdOfClickedImage).append('<li class="ui-state-default ui-sortable-handle context-menu-one btn btn-neutral"><a href="https://' + mapOfApps.get(nameValue)[1] + '"><img src="' + mapOfApps.get(nameValue)[0] + '" class="application" /><a/><p class="text-shortcut">' + nameValue + '</p></li>');
-});
+  //to get an element inside the iframe I need to use finished
+  //tis one is for the element already existing in the extention
+  $('#app-iframe').contents().find('.add-button').click(function(){
+    //I get the name in the same "li"
+    nameValue = $(this).closest('th').find("p").text();
+    //and append the new app/shortcut to my list. I know wiche one because the
+    //name is the key of my map
+   $(parentIdOfClickedImage).append('<li class="ui-state-default ui-sortable-handle context-menu-one btn btn-neutral"><a href="https://' + mapOfApps.get(nameValue)[1] + '"><img src="' + mapOfApps.get(nameValue)[0] + '" class="application" /><a/><p class="text-shortcut">' + nameValue + '</p></li>');
+  });
 
-$('#app-iframe').contents().find("#submit-btn").click(function(){
-  console.log($('#app-iframe').contents().find("#value-to-get").html());
-
-  $(parentIdOfClickedImage).append($('#app-iframe').contents().find("#value-to-get").html());
-});
-
-$(".container").on("click", function(){
-  if(animationFinished == true){
-    console.log('2');
-    $("#app-iframe").animate({"right": "-40%"},
-    { duration: 1250, easing: 'easeOutBounce' })
-    .promise().done(function () {
-        $("#app-iframe").hide();
-    });
-      animationFinished = false;
-  }
-})
+//for the upload of shortcut, it's not efficient to get every element and
+// act on them in the I iframe from here
+//so before I had a "p" invisible that I fill with the code I need to get. but this must be
+//done in the script of the iframe
+  $('#app-iframe').contents().find("#submit-btn").click(function(){
+    $(parentIdOfClickedImage).append($('#app-iframe').contents().find("#value-to-get").html());
+  });
 
 });

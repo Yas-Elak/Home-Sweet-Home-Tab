@@ -140,46 +140,8 @@ $(window).on("load", function (e) {
         }
     });
 
-    $(".clickable").on("click", function () {
-      //  $("#dialog").dialog("open");
-        //parentIdOfClickedImage = this.parentElement.parentElement;
-        //console.log(parentIdOfClickedImage);
-    });
 
-    $("#tags").autocomplete({
-        source: availableTags,
-        select: function (event, ui) {
-            imageToAdd = ui.item.value;
-            $("#choose-app-img").attr("src", mapOfApps.get(imageToAdd)[0]);
-        }
-    });
-
-    //tu dois faire le menu contextuelle
-    $("#save-new-app").click(function () {
-        let uriAppValue = $("[name='uriApp']").val();
-        let linkValue = $("[name='urlApp']").val().toLowerCase;
-        let nameValue = $("[name='nameOfTheApp']").val();
-        console.log(nameValue);
-        if ((imageToAdd == "" && uriAppValue == "") || linkValue == "" || nameValue == "") {
-            //you must fill the blank
-        } else {
-            if (uriAppValue != "") {
-                mapOfApps.set(nameValue, [uriAppValue, linkValue]);
-                $(parentIdOfClickedImage).append('<li class="ui-state-default ui-sortable-handle context-menu-one btn btn-neutral"><a href="' + linkValue + '"><img src="' + uriAppValue + '" class="application" /><a/><p class="text-shortcut">' + nameValue + '</p></li>');
-            } else {
-                $(parentIdOfClickedImage).append('<li class="ui-state-default ui-sortable-handle context-menu-one btn btn-neutral"><a href="https://' + mapOfApps.get(imageToAdd)[1] + '"><img src="' + mapOfApps.get(imageToAdd)[0] + '" class="application" /><a/><p class="text-shortcut">' + nameValue + '</p></li>');
-                mapOfApps.set(nameValue, [mapOfApps.get(imageToAdd)[0], linkValue]);
-                chrome.storage.local.set({ "mapOfApp": mapOfApps });
-
-            }
-            if ($.inArray(nameValue, availableTags) == -1) {
-                availableTags.push(nameValue);
-                availableTags.sort();
-                chrome.storage.local.set({ "availableTags": availableTags });
-            }
-            $('#dialog').dialog('close');
-        }
-    });
+  
 
     $(".ui-menu-item").on("click", function () {
         console.log("i clicked");

@@ -1,8 +1,10 @@
 $(window).on("load", function (e) {
-
-    $("#start-sudoku").on("click", function () {
-        $('#start-sudoku').hide();
-        let sudokuContainer = `
+//the code for the sudoku is to big, so i use it only when it is necessary
+//when the user click o the button to play, I laod the html AND the script of
+//the sudoku from here
+$("#start-sudoku").on("click", function () {
+    $('#start-sudoku').hide();
+    let sudokuContainer = `
 <center>
     <form class="board">
         <input type="button" id="clear-btn" value="Clear">
@@ -239,11 +241,12 @@ $(window).on("load", function (e) {
 
             `;
         $("#sudoku").html(sudokuContainer);
-        var head = document.getElementsByTagName('head')[0];
+        
+        //I need to access the head object to inject the script
         var script = document.createElement('script');
         script.type = 'text/javascript';
         script.src = 'scripts/sudoku.js';
-        head.appendChild(script);
+        $("head")[0].appendChild(script);
    });
 
 
