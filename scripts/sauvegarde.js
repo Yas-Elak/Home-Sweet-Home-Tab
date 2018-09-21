@@ -1,7 +1,8 @@
 
 $(window).on("load", function (e) {
 
-
+    //this is a listener who isten to changment in the page, at every changement
+    // i acces the memories and save the changement
     MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
     var observer = new MutationObserver(function (mutations, observer) {
         chrome.storage.local.set({ "toDoListContainer": $('#todo-list-container').prop('innerHTML') });
@@ -23,7 +24,8 @@ $(window).on("load", function (e) {
     });
   $('#notes-container iframe').contents().find('p').text('dsgjfdsgdhsgj');
 
-//test this one work well and is very clean, Here I observe the .uldone only
+//test this one work well and is very clean, Here I observe the same as upstairs bu with different syntaxt
+//I keep it for test purpose
     var targetNodes = $("#notes-container iframe p");
     var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
     var myObserver = new MutationObserver(mutationHandler);

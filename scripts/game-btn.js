@@ -241,11 +241,11 @@ $("#start-sudoku").on("click", function () {
 
             `;
         $("#sudoku").html(sudokuContainer);
-        
+
         //I need to access the head object to inject the script
         var script = document.createElement('script');
         script.type = 'text/javascript';
-        script.src = 'scripts/sudoku.js';
+        script.src = 'plugin/sudoku.js';
         $("head")[0].appendChild(script);
    });
 

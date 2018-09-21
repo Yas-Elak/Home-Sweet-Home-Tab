@@ -1,14 +1,20 @@
 $(function () {
+  //here is the script who will start the app, it will add the container, empty
+  //the first time the app run and with the change the users made the next time
 
-    let firstTime;
 
-
-    //TODO here I clear the storge every time for testing purpose
+    //righthere I clear the storge every time for debuging purpose
     //chrome.storage.local.clear();
 
     /* i Initailize the todo list, the done list and the app list the first time
     the app run, then I save them in the storage
     */
+
+    //the chrome.storage.local.get is run by javascript in last because of the
+    //call back, So i Must do everithing in it.
+    //if not i will apply some change on element who are not there yet because
+    // chrome.storage.local.get didn't trigger yet
+    let firstTime;
     chrome.storage.local.get("firstTime", function (result) {
         firstTime = result.firstTime;
         if (firstTime == null) {
@@ -73,6 +79,9 @@ $(function () {
             `;
             $("#list-app-container").html(appListContainer);
             firstTime = false;
+
+            // i save everything just in case the user don't use something
+            //who can trigger the save
             chrome.storage.local.set({ "firstTime": firstTime });
             chrome.storage.local.set({ "toDoListContainer": $('#todo-list-container').prop('innerHTML') });
             chrome.storage.local.set({ "donelistcontainer": $('#done-list-container').prop('innerHTML') });
@@ -86,7 +95,6 @@ $(function () {
             //then the firsttime is false and this part never run again
         }
         else {
-
             chrome.storage.local.get("donelistcontainer", function (result) {
                 $("#done-list-container").html(result.donelistcontainer);
             });

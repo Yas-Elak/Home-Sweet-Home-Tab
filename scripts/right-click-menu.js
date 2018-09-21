@@ -4,9 +4,9 @@
         selector: '.context-menu-one',
         callback: function(key, options) {
             if(key == "edit"){
-              console.log('e');
+              console.log('nothing');
               //un dialog ou un iframe pour éditer le logo, le lien, et le titre
-            }else{
+            }else{///just edit or delete, so if it's not edit I'l remove the element
                 $(this).closest('li').remove();
               }
         },

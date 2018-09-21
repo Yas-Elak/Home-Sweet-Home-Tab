@@ -6,6 +6,7 @@ $(window).on("load", function (e) {
         height: "97%",
         setup: function (ed) {
             ed.on('keydown', function (e) {
+                //on key done I save the notes
                 chrome.storage.local.set({ "note1": tinyMCE.editors[0].getContent() });
                 chrome.storage.local.set({ "note2": tinyMCE.editors[1].getContent() });
                 chrome.storage.local.set({ "note3": tinyMCE.editors[2].getContent() });
@@ -15,7 +16,11 @@ $(window).on("load", function (e) {
             });
         }
     });
-
+    //when this is initalised I load the content in the not
+    //the key notex already exist because i put it in the inisialisation.js
+    //I do this here because the TinyMce must exist before i apply changement on interval
+    //If i do that in the initialisation.js it will glitch because the element
+    // doensn't exist yet
     chrome.storage.local.get("note1", function (result) {
         tinyMCE.editors[0].setContent(result.note1);
     });
