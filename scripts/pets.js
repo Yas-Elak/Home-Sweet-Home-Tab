@@ -2,8 +2,6 @@ $(window).on("load", function (e) {
 /*
 *correction of the position, it depends if the cas rest, is sitting or standing
 */
-
-
   let catPosition = Math.floor((Math.random() * 3));
   let topPosition;
   let negation;
@@ -119,18 +117,36 @@ $("#pet,#pet-sitting,#pet-resting").hover(function () {
 /*
 *Function to make the cat blink randomly, it must stop when we hover the cat
 */
-let blinkeyes = 2500;
+let blinkeyes = 250;
 let openEyes = true;
-window.setInterval(function(){
+function petBlink() {
   if (!hoverBlink){
     if (openEyes){
       $(".pet-eyes-img").attr("src", "images/cats/standing-cat-eyes-closed.svg");
-      openEyes = false
+      openEyes = false;
+      blinkeyes = 5;
+      console.log("open");
     } else {
       $(".pet-eyes-img").attr("src", "images/cats/standing-cat-eyes.svg");
+      blinkeyes = 5000;
+      openEyes = true;
+      console.log("closed");
     }
-    blinkeyes = Math.floor((Math.random() * (10000 - 3250) )) + 3250;
-  }}, blinkeyes);
+  }
+  setTimeout(petBlink, blinkeyes);
+};
+petBlink();
+
+
+
+
+
+
+
+
+
+
+
 
 
 });
