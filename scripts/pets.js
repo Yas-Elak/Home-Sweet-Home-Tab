@@ -56,7 +56,7 @@ function animationLengthTime(){
 *function to calculate the time length between the Animation
 */
 function animationLapsTime(){
-  return Math.floor(Math.random() * (15000 - 2000) ) + 2000;
+  return Math.floor(Math.random() * (8000 - 2000) ) + 2000;
 }
 
  function animation1(top){
