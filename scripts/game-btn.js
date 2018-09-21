@@ -8,8 +8,6 @@ $(window).on("load", function (e) {
         <input type="button" id="clear-btn" value="Clear">
         <input type="button" id="new-btn" value="New Problem">
         <input type="button" id="check-btn" value="Check">
-        <input type="button" value="Reset" onClick="generate(puzzle)" />
-        <input type="button" value="Solve" onClick="solve();">
 
         <div class="container">
             <div class="row">
