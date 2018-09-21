@@ -61,7 +61,6 @@ function animationLapsTime(){
 
  function animation1(top){
         $(".pet-head").animate({rotate: '15deg'}, animationLengthTime()).delay(animationLapsTime());
-        $(".pet-eyes-img").attr("src", "images/cats/standing-cat-eyes-closed.svg");
         $(".pet-head").animate({'top':''+negation+(top-5)+'%'},animationLengthTime()).delay(animationLapsTime());
         $(".pet-head").animate({rotate: '0deg'}, animationLengthTime());
         $(".pet-head").animate({'top':''+negation+top+'%'},animationLengthTime()).delay(animationLapsTime());
@@ -124,11 +123,11 @@ function petBlink() {
     if (openEyes){
       $(".pet-eyes-img").attr("src", "images/cats/standing-cat-eyes-closed.svg");
       openEyes = false;
-      blinkeyes = 5;
+      blinkeyes = 200;
       console.log("open");
     } else {
       $(".pet-eyes-img").attr("src", "images/cats/standing-cat-eyes.svg");
-      blinkeyes = 5000;
+      blinkeyes = Math.floor(Math.random() * (7000-2000))+2000;
       openEyes = true;
       console.log("closed");
     }
