@@ -1,28 +1,15 @@
+//$(window).on("load", function (e) { allow to run this script in the last one
+//I need that because it apply on element who MUST be there before the script act
 $(window).on("load", function (e) {
-    $('.sortable').sortable({
-        connectWith: "ul",
-    }).disableSelection();
+  //the jquery librairie allow to drag and drop in a few lines
+  $('.sortable').sortable({
+      connectWith: "ul",
+  }).disableSelection();
 
-    $(".add-done").click(function () {
-        var newItem = $(".input-done").val();
-        if (newItem != "") {
-            $(".ul-done").append('<li>' + newItem + '<button class="btn-delete"><img src="images/delete.png" alt="delete"></button></li>');
-            $(".input-done").val("")
-            $(".input-done").attr("placeholder", "Add a new task");
-        };
-    });
-    $(".add-todo").click(function () {
-        var newItem = $(".input-todo").val();
-        if (newItem != "") {
-            $(".ul-todo").append('<li>' + newItem + '<button class="btn-delete"><img src="images/delete.png" alt="delete"></button></li>');
-            $(".input-todo").val("")
-            $(".input-todo").attr("placeholder", "Add a new task");
-        };
-    });
-    $(document).on('click', '.btn-delete', function () {
-        $(this).parent().remove();
-    });
+  //TODO correct the bug who moves the input element when you drag an element
+  //from one list to another
 
-    $(".container").show();
-
- })
+  //as one of the last script to run I Show the container that I Hide in
+  //backgroun.js
+  $(".container").show();
+})

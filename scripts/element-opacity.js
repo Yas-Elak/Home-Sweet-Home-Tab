@@ -1,11 +1,4 @@
 $(window).on("load", function (e) {
-  $("#notes").css("background-color", " rgba(255, 255, 255, .2)");
-  $("#sudoku").css("background-color", " rgba(255, 255, 255, .2)");
-  $(".save-done-list-container").css("background-color", " rgba(255, 255, 255, .2)");
-  $(".save-todo-list-container").css("background-color", " rgba(255, 255, 255, .2)");
-  $("#application-container").css("background-color", " rgba(255, 255, 255, .2)");
-
-
 
   let delayOpacity = 12500;
   let opacityNotes = false;
@@ -25,6 +18,25 @@ $(window).on("load", function (e) {
           }
         });
     });
+
+  function elementOpacityHandler(element, opacity){
+        $(element).mouseenter(function(){
+          opacity = true;
+          $(this).css("background-color", " rgba(255, 255, 255, .7)");
+          console.log(opacityNotes);
+        });
+        $(element).mouseleave(function(){
+          opacityNotes = false;
+          console.log(opacityNotes);
+          $(this).stop(true, false).delay(delayOpacity)
+              .queue(function (next) {
+                if(!opacityNotes){
+                  $(this).css("background-color", " rgba(255, 255, 255, .2)")
+                  next();
+                }
+              });
+          });
+       };
 
   let opacitySudoku = false;
     $("#sudoku").mouseenter(function(){
@@ -103,7 +115,7 @@ $(window).on("load", function (e) {
             });
         });
 
-
+//-------------------------------------------
 $('#background-btn').mouseover( function (event) {
   $(".container").stop(true,true).delay(2000).fadeOut('slow');
 }).mouseout( function (event) {
