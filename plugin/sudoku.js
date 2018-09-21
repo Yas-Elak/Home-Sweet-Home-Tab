@@ -1,8 +1,8 @@
 $(function () {
     console.log('4dsddsqd');
     function dlx_cvr(clmn)
-/*Covering a column removes it from the "matrix" by making its neighbors 
-to the column before/after it depending on which neighbor we're talking about. 
+/*Covering a column removes it from the "matrix" by making its neighbors
+to the column before/after it depending on which neighbor we're talking about.
 We also remove the rows associated with that column in a similar manner. */ {
         var i, j;
 
@@ -21,11 +21,11 @@ We also remove the rows associated with that column in a similar manner. */ {
     }
 
     function dlx_uncvr(clmn)
-/*Uncovering a column places it back into the "matrix". This 
-is possible because when we cover a column we never change 
-the contents of column (i.e. clmn.left, clmn.right, etc). Thus 
-we are able to place this clmn back into the matrix by 
-simply making its neighbors point back to this cell. The 
+/*Uncovering a column places it back into the "matrix". This
+is possible because when we cover a column we never change
+the contents of column (i.e. clmn.left, clmn.right, etc). Thus
+we are able to place this clmn back into the matrix by
+simply making its neighbors point back to this cell. The
 same can also be said about all the rows of this column*/ {
         var i, j;
         for (i = clmn.up; i != clmn; i = i.up)
@@ -42,12 +42,12 @@ same can also be said about all the rows of this column*/ {
     }
 
     function dlx_search(ptr, sol, curr, ans, maxno)
-/*This is a recursive function that iterates 
+/*This is a recursive function that iterates
 through the matrix to search for a feasible solution. */ {
         var j, rw, s, clmn;
         if (ptr.right == ptr)
-	/*This is the terminating condition for the recursion. 
-	ptr.right == ptr implies that there is only one remaining 
+	/*This is the terminating condition for the recursion.
+	ptr.right == ptr implies that there is only one remaining
 	column, the current column (i.e. we are close to a solution)*/ {
             ans[ans.length] = sol.slice(0);
             if (ans.length >= maxno) {
@@ -75,11 +75,11 @@ through the matrix to search for a feasible solution. */ {
         dlx_cvr(clmn);
 
         for (rw = clmn.down; rw != clmn; rw = rw.down)
-	/*This searches for a row in the above mentioned column. 
-	It iterates through the rows of that column and tries to 
+	/*This searches for a row in the above mentioned column.
+	It iterates through the rows of that column and tries to
 	cover that row-column pair by covering all columns that
-	row appears on. Then it calls search again and depending 
-	on the result either stops the recursion or un-covers that 
+	row appears on. Then it calls search again and depending
+	on the result either stops the recursion or un-covers that
 	row and tries again in a different position. */ {
             sol[curr] = rw.row;
             for (j = rw.right; j != rw; j = j.right) {
@@ -101,7 +101,7 @@ through the matrix to search for a feasible solution. */ {
     }
 
     function dlx_solve(matrix, skip, maxno)
-/*This function takes as input the exact cover matrix and returns the 
+/*This function takes as input the exact cover matrix and returns the
 solutions to the exact cover problem. */ {
         var clms = new Array(matrix[0].length);
         var i, j;
@@ -113,7 +113,7 @@ solutions to the exact cover problem. */ {
 
         for (i = 0; i < clms.length; i++)
 	/* This sets up a single row of columns as a doubly linked list.
-	These serve as the column headers and give information about the 
+	These serve as the column headers and give information about the
 	cells below. */ {
             clms[i].index = i;
             clms[i].up = clms[i];
@@ -138,7 +138,7 @@ solutions to the exact cover problem. */ {
 	column. this will serve as the new row. */ {
             var last = null;
             for (j = 0; j < matrix[i].length; j++)
-		/*This iteratively inserts a node at the end of the 
+		/*This iteratively inserts a node at the end of the
 		selected row. This will serve as the new cell. This
 		cell is only created if the associated matrix element
 		is defined. */ {
@@ -166,7 +166,7 @@ solutions to the exact cover problem. */ {
             }
         }
 
-        /*This gives the new doubly linked list matrix a header 
+        /*This gives the new doubly linked list matrix a header
         pointing to the first element, which is the first column header. */
         var ptr = new Object;
         ptr.right = clms[skip];
@@ -180,7 +180,7 @@ solutions to the exact cover problem. */ {
     }
 
     function solve_sudoku(grid)
-/*This transforms the Sudoku grid into a exact cover matrix which 
+/*This transforms the Sudoku grid into a exact cover matrix which
 we will use for the dancing links algorithm. */ {
         var table = new Array();
         var rinfo = new Array();
