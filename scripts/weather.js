@@ -22,9 +22,9 @@ $(document).ready(function() {
 			//	$('.weatherDetail').html(weatherDetail);
 				$('#iconpic>img').attr('src','../images/weather-icons/'+icon+'.svg');
         if (data.country_code == "US"){
-          $('#temp').html(Math.round(fahrenheit)+"&#8457;"+" ");
+          $('#temp').html(Math.round(fahrenheit)+"°F");
         } else{
-          $('#temp').html(Math.round(temprature)+"&#8451;" +" ");
+          $('#temp').html(Math.round(temprature)+"°C");
         }
 			},
 			error: function(err) {

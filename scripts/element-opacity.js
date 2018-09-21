@@ -1,69 +1,107 @@
 $(window).on("load", function (e) {
+  $("#notes").css("background-color", " rgba(255, 255, 255, .2)");
+  $("#sudoku").css("background-color", " rgba(255, 255, 255, .2)");
+  $(".save-done-list-container").css("background-color", " rgba(255, 255, 255, .2)");
+  $(".save-todo-list-container").css("background-color", " rgba(255, 255, 255, .2)");
+  $("#application-container").css("background-color", " rgba(255, 255, 255, .2)");
 
-   $("#notes").hover(function () {
-       $(this).css("background-color", " rgba(255, 255, 255, .7)");
-   }, function () {
-           $(this).delay(10000)
-               .queue(function (next) {
-                   $(this).css("background-color", " rgba(255, 255, 255, .2)")
-                   next();
-               });
-       });
-    $("#sudoku").hover(function () {
-        $(this).css("background-color", " rgba(255, 255, 255, .7)");
-    }, function () {
-        $(this).delay(10000)
-            .queue(function (next) {
-                $(this).css("background-color", " rgba(255, 255, 255, .2)")
-                next();
-            });
+
+
+  let delayOpacity = 12500;
+  let opacityNotes = false;
+  $("#notes").mouseenter(function(){
+    opacityNotes = true;
+    $(this).css("background-color", " rgba(255, 255, 255, .7)");
+    console.log(opacityNotes);
+  });
+  $("#notes").mouseleave(function(){
+    opacityNotes = false;
+    console.log(opacityNotes);
+    $(this).stop(true, false).delay(delayOpacity)
+        .queue(function (next) {
+          if(!opacityNotes){
+            $(this).css("background-color", " rgba(255, 255, 255, .2)")
+            next();
+          }
         });
-    $(".save-done-list-container").hover(function () {
-        $(this).css("background-color", " rgba(255, 255, 255, .7)");
-    }, function () {
-        $(this).delay(10000)
-            .queue(function (next) {
-                $(this).css("background-color", " rgba(255, 255, 255, .2)")
-                next();
-            });
-        });
-    $(".save-done-list-container").hover(function () {
-        $(".save-todo-list-container").css("background-color", " rgba(255, 255, 255, .7)");
-    }, function () {
-        $(".save-todo-list-container").delay(10000)
-            .queue(function (next) {
-                $(".save-todo-list-container").css("background-color", " rgba(255, 255, 255, .2)")
-                next();
-            });
     });
-    $(".save-todo-list-container").hover(function () {
-        $(this).css("background-color", " rgba(255, 255, 255, .7)");
-    }, function () {
-        $(this).delay(10000)
-            .queue(function (next) {
-                $(this).css("background-color", " rgba(255, 255, 255, .2)")
-                next();
-            });
-        });
-    $(".save-todo-list-container").hover(function () {
-        $(".save-done-list-container").css("background-color", " rgba(255, 255, 255, .7)");
-    }, function () {
-        $(".save-done-list-container").delay(10000)
-            .queue(function (next) {
-                $(".save-done-list-container").css("background-color", " rgba(255, 255, 255, .2)");
-                next();
-            });
-        });
+
+  let opacitySudoku = false;
+    $("#sudoku").mouseenter(function(){
+      opacitySudoku = true;
+      $(this).css("background-color", " rgba(255, 255, 255, .7)");
+    });
+    $("#sudoku").mouseleave(function(){
+      opacitySudoku = false;
+      $(this).stop(true, false).delay(delayOpacity)
+          .queue(function (next) {
+            if(!opacitySudoku){
+              $(this).css("background-color", " rgba(255, 255, 255, .2)")
+              next();
+            }
+          });
+      });
+
+  let opacityDone = false;
+    $(".save-done-list-container").mouseenter(function(){
+      opacityDone = true;
+      $(this).css("background-color", " rgba(255, 255, 255, .7)");
+      $(".save-todo-list-container").css("background-color", " rgba(255, 255, 255, .7)");
+    });
+    $(".save-done-list-container").mouseleave(function(){
+      opacityDone = false;
+      $(this).stop(true, false).delay(delayOpacity)
+          .queue(function (next) {
+            if(!opacityDone){
+              $(this).css("background-color", " rgba(255, 255, 255, .2)")
+              $(".save-todo-list-container").css("background-color", " rgba(255, 255, 255, .2)")
+              next();
+            }
+          });
+      });
+
+  let opacityTodo = false;
+    $(".save-todo-list-container").mouseenter(function(){
+      opacityTodo = true;
+      $(this).css("background-color", " rgba(255, 255, 255, .7)");
+      $(".save-done-list-container").css("background-color", " rgba(255, 255, 255, .7)");
+    });
+    $(".save-todo-list-container").mouseleave(function(){
+      opacityTodo = false;
+      $(this).stop(true, false).delay(delayOpacity)
+          .queue(function (next) {
+            if(!opacityTodo){
+              $(this).css("background-color", " rgba(255, 255, 255, .2)")
+              $(".save-done-list-container").css("background-color", " rgba(255, 255, 255, .2)")
+              next();
+            }
+          });
+      });
+
     $("#application-container").hover(function () {
         $(this).css("background-color", " rgba(255, 255, 255, .7)");
     }, function () {
-        $(this).delay(10000)
+        $(this).delay(delayOpacity)
             .queue(function (next) {
                 $(this).css("background-color", " rgba(255, 255, 255, .2)")
                 next();
             });
     });
-
+    let opacityApp = false;
+      $("#application-container").mouseenter(function(){
+        opacityApp = true;
+        $(this).css("background-color", " rgba(255, 255, 255, .7)");
+      });
+      $("#application-container").mouseleave(function(){
+        opacityApp = false;
+        $(this).stop(true, false).delay(delayOpacity)
+            .queue(function (next) {
+              if(!opacityApp){
+                $(this).css("background-color", " rgba(255, 255, 255, .2)")
+                next();
+              }
+            });
+        });
 
 
 $('#background-btn').mouseover( function (event) {

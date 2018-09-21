@@ -2,6 +2,8 @@ $(window).on("load", function (e) {
 /*
 *correction of the position, it depends if the cas rest, is sitting or standing
 */
+
+
   let catPosition = Math.floor((Math.random() * 3));
   let topPosition;
   let negation;
@@ -25,6 +27,7 @@ $(window).on("load", function (e) {
     $(".pet-head").css({"top": topPosition+"%", "left": "16%"})
     negation="";
   }
+  $("#cat-box").css({"visibility": "visible"});
 
 //data (title, name and color)
 let titleArray = ["Miss","Mr","Mrs","Ms","Brother","Captain","Doctor","Father","Honourable","Lady","Madam","Major","Master","Pastor","Professor","Reverend","Sir","Sister","Abbott","Ableseaman","Admiral","Air","Chief","Marshal","Air","Commodore","Air","Marshall","Ambassador","Archbishop","Archdeacon","Associate","Professor","Baron","Baroness","Bishop","Bombardier","Brigadier","Cadet","Canon","Cardinal","Chaplain","Chief","Petty","Officer","Colonel","Commander","Commissioner","Commodore","Constable","Consul","Corporal","Count","Countess","Dame","Deacon","Deaconess","Dean","Deputy","Superintendent","Director","Earl","Engineer","Flight","Lieutenant","Flight","Sergeant","Flying","Officer","General","Governor","Group","Captain","Honourable","Judge","Honourable","Justice","Judge","Justice","Lance","Corporal","Lieutenant","Lieutenant","Colonel","Lieutenant","Commander","Lieutenant","General","Lieutenant","Governor","Lord","Madame","Major","General","Manager","Mayor","Mayoress","Midshipman","Monsignor","Most","Reverend","Mother","Nurse","Office","Cadet","Petty","Officer","Pilot","Officer","Private","Rabbi","Rear","Admiral","Rector","Reverend","Doctor","Right","Honourable","Right","Reverend","Seaman","Second","Lieutenant","Senator","Senior","Senior","Constable","Sergeant","Sister","Superior","Squadron","Leader","Staff","Cadet","Staff","Sergeant","Station","Master","Sub","Lieutenant","Superintendent","Swami","Very","Reverend","Vice","Admiral","Vice","Commander","Viscount","Warrant","Officer","Wing","Commander"];

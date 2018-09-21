@@ -1,11 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,900);  /* <-- Just for the demo, Yes I like pretty fonts... */
 
 body{
 padding: 0;
 margin: 0;
 background-color: none;
-font-family: 'Lato',verdana, sans-serif;
-
+font-family: 'Montserrat', sans-serif;
 }
 
 #container-general{

@@ -1,3 +1,7 @@
+.ui-widget{
+	font-family: 'Montserrat', sans-serif !important;
+}
+
 .container .ui-widget, .container .ui-widget-content {
 	border: none !important;
 	background: none;

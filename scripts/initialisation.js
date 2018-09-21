@@ -2,6 +2,7 @@ $(function () {
 
     let firstTime;
 
+
     //TODO here I clear the storge every time for testing purpose
     //chrome.storage.local.clear();
 
