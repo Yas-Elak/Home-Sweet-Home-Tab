@@ -2,6 +2,7 @@ $(window).on("load", function (e) {
 /*
 *correction of the position, it depends if the cas rest, is sitting or standing
 */
+
   let catPosition = Math.floor((Math.random() * 3));
   let topPosition;
   let negation;
@@ -18,11 +19,11 @@ $(window).on("load", function (e) {
     $(".pet-head").css({"top": "-"+topPosition+"%"})
     negation ="-";
   } else {
-    topPosition = 15;
+    topPosition = -15;
     $("#pet").hide();
     $("#pet-sitting").hide();
     $(".pet-shadow").css({"bottom": "28%", "left": "16%"});
-    $(".pet-head").css({"top": topPosition+"%", "left": "16%"})
+    $(".pet-head").css({"top": topPosition+"%", "left": "-5%"})
     negation="";
   }
   $("#cat-box").css({"visibility": "visible"});
@@ -98,13 +99,11 @@ setInterval(function(){
   animation5(topPosition);
 },1000);
 
-
 /*
 *Function to make the cat close is eyes when the mouse is overflow
 *this must cancel the function who make it blink random
 */
 let hoverBlink = false;
-console.log(hoverBlink);
 $("#pet,#pet-sitting,#pet-resting").hover(function () {
     $(".pet-eyes-img").attr("src", "images/cats/standing-cat-eyes-closed.svg");
     hoverBlink = true;
@@ -124,12 +123,10 @@ function petBlink() {
       $(".pet-eyes-img").attr("src", "images/cats/standing-cat-eyes-closed.svg");
       openEyes = false;
       blinkeyes = 200;
-      console.log("open");
     } else {
       $(".pet-eyes-img").attr("src", "images/cats/standing-cat-eyes.svg");
       blinkeyes = Math.floor(Math.random() * (7000-2000))+2000;
       openEyes = true;
-      console.log("closed");
     }
   }
   setTimeout(petBlink, blinkeyes);
