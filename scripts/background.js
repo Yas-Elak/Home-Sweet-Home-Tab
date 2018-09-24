@@ -60,35 +60,4 @@ chrome.tabs.query({currentWindow: true}, function(tab){
   */
 
 
-  function GAPIlistMessages(userId, query) {
-  var url = 'https://www.googleapis.com/gmail/v1/users/elalaoui87@gmail.com/messages?q='+query+'&fields=messages%2Fid' // JSON array of message ID
-  var headers = {
-    Authorization: '617454971894-ghr01011ngtea7us7nb4tt1r0drv3g89.apps.googleusercontent.com'
-  };
-
-  var params = {
-    method: "GET",
-    contentType: "application/json",
-    headers: headers,
-    muteHttpExceptions: true, // for debugging
-    };
-
-  var check = UrlFetchApp.getRequest(url, params); // for debugging
-  var response = UrlFetchApp.fetch(url, params);
-
-  var result = response.getResponseCode();
-  if (result == '200') {  // OK
-    var msgIds = JSON.parse(response.getContentText());
-    //Logger.log(response.getContentText())
-  return msgIds;
-
-  }
-  else {
-    // This is only needed when muteHttpExceptions == true
-    var err = JSON.parse(response.getContentText());
-    throw new Error( 'Error (' + result + ") " + err.error.message );
-  }
-}
-console.log(GAPIlistMessages("elalaoui87@gmail.com", ""));
-
 });
