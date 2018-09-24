@@ -1,5 +1,5 @@
 $(window).on("load", function (e) {
-  const delayOpacity = 1000;
+  const delayOpacity = 15000;
 
   //when the app close it saves the opacity of the element, I don't want that so
   //so I make them transparent again before they show.

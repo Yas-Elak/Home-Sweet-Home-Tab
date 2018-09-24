@@ -17,6 +17,7 @@ position: relative;
 	color: #fff;
   }
 
+
 /*Need to insist to override the userAgent StyleSheet*/
 input, textarea, select, button {
 	font-family: 'Montserrat', sans-serif;
@@ -32,10 +33,6 @@ input, textarea, select, button {
 
 /*end dialog*/
 
-#dialog{
-
-
-}
 
 #my-menu-container{
 	text-align: center;
@@ -64,6 +61,21 @@ input, textarea, select, button {
 
 .weather *{
 	padding-left: 5px;
+}
+
+#my-menu a{
+	position: absolute;
+	top: 30%;
+	right: 6%;
+	color: white;
+	text-decoration: none;
+}
+
+#about-link:active {
+    color: white;
+}
+#about-link:visited {
+    color:white;
 }
 
 #background-btn{
