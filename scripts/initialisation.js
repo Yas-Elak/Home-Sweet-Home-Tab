@@ -4,7 +4,7 @@ $(function () {
 
 
     //righthere I clear the storge every time for debuging purpose
-    chrome.storage.local.clear();
+    //chrome.storage.local.clear();
 
     /* i Initailize the todo list, the done list and the app list the first time
     the app run, then I save them in the storage
